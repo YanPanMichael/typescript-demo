@@ -32,5 +32,5 @@ interface ReadonlyStringArray {
   readonly [index:number]:string
 }
 let myArray:ReadonlyStringArray = ['a', 'b']
-myArray.push('c')
-myArray[1] = 'c'
+myArray.push('c') //error
+myArray[1] = 'c' //error
