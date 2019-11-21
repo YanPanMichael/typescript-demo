@@ -34,3 +34,16 @@ interface ReadonlyStringArray {
 let myArray:ReadonlyStringArray = ['a', 'b']
 myArray.push('c') //error
 myArray[1] = 'c' //error
+
+interface SquareConfig {
+  [propanme: string]: any
+}
+
+interface SearchFunc {
+  (a: string, b: string): boolean
+}
+
+let mySearch: SearchFunc;
+mySearch = function(c, d) {
+  return c.search(d) > -1
+}
