@@ -47,3 +47,23 @@ let mySearch: SearchFunc;
 mySearch = function(c, d) {
   return c.search(d) > -1
 }
+
+//混合类型
+interface Counter {
+  (start: number): string,
+  interval: number,
+  reset(): void
+}
+
+function getCounter(): Counter {
+  let counter = (function(start: number){
+
+  }) as Counter;
+  counter.interval = 10
+  counter.reset = function(){}
+  return counter
+}
+
+let co = getCounter()
+co(11)
+co.reset()
