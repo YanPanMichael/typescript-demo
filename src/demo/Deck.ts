@@ -13,7 +13,7 @@ interface Deck {
 const deck: Deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamand'],
   cards: Array<number>(52),
-  createCardPicker: function() {
+  createCardPicker: function(this:Deck) {
     let that = this;
     return function() {
       let pickedCard = Math.floor(Math.random() * 52);
@@ -30,7 +30,7 @@ const deck: Deck = {
 const deck2: Deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamand'],
   cards: Array<number>(52),
-  createCardPicker: function() {
+  createCardPicker: function(this:Deck) {
     return () => {
       let pickedCard = Math.floor(Math.random() * 52);
       let pickedSuit = Math.floor(pickedCard / 13);
