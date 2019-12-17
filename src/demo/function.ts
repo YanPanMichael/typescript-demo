@@ -10,4 +10,4 @@ function buildName2(fn:string, ...restName:string[]):string {
   return fn + ' ' + restName
 }
 
-buildName('Bob')
+buildName('Bob');
