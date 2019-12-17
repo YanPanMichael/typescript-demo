@@ -6,11 +6,11 @@ interface Card {
 interface Deck {
   suits: string[],
   cards: number[],
-  createCardPicker: () => Card
+  createCardPicker: () => () => Card
 }
 
 
-const deck = {
+const deck: Deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamand'],
   cards: Array<number>(52),
   createCardPicker: function() {
@@ -27,7 +27,7 @@ const deck = {
   }
 }
 
-const deck2 = {
+const deck2: Deck = {
   suits: ['hearts', 'spades', 'clubs', 'diamand'],
   cards: Array<number>(52),
   createCardPicker: function() {
