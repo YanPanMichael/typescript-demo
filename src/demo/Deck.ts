@@ -46,3 +46,7 @@ const deck2: Deck = {
 const cardPicker = deck.createCardPicker();
 const card = cardPicker();
 console.log(card.suit, card.card)
+
+interface UIElement {
+  
+}
