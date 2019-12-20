@@ -48,5 +48,12 @@ const card = cardPicker();
 console.log(card.suit, card.card)
 
 interface UIElement {
-  
+  addClickListener(onclick : (this:void, e:Event) => void): void
+}
+
+class Hander {
+  type!: string;
+  onClickBad = (e: Event) => {
+    this.type = e.type
+  }
 }
