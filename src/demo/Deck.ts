@@ -47,13 +47,21 @@ const cardPicker = deck.createCardPicker();
 const card = cardPicker();
 console.log(card.suit, card.card)
 
-interface UIElement {
-  addClickListener(onclick : (this:void, e:Event) => void): void
+interface UIelement {
+  addClickhandler(onclick:(this:void, e:Event) => void): void
 }
 
-class Hander {
-  type!: string;
-  onClickBad = (e: Event) => {
-    this.type = e.type
+class Handler {
+  type?: string;
+  onClicked = (e: Event) => {
+    this.type = e.type;
   }
 }
+
+let h = new Handler();
+
+let uiElement:UIelement = {
+  addClickhandler() {}
+}
+
+uiElement.addClickhandler(h.onClicked)
