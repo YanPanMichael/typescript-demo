@@ -31,11 +31,18 @@ combine.name;
 combine.log();
 // 联合类型
 function paddingLeft(value, padding) {
-    if (typeof padding === 'string') {
+    if (isString(padding)) {
         return value + padding;
     }
-    if (typeof padding === 'number') {
+    if (isNumber(padding)) {
         return Array(padding + 1).join(' ') + value;
     }
     throw new Error('input target type not number or string');
+}
+// 类型断言
+function isNumber(padding) {
+    return typeof padding === 'number';
+}
+function isString(padding) {
+    return typeof padding === 'string';
 }

@@ -34,11 +34,19 @@ combine.log()
 
 // 联合类型
 function paddingLeft(value: string, padding: string|number): string|number {
-  if(typeof padding === 'string') {
+  if(isString(padding)) {
       return value + padding;
   }
-  if(typeof padding === 'number') {
+  if(isNumber(padding)) {
       return Array(padding + 1).join(' ') + value;
   }
   throw new Error('input target type not number or string')
+}
+
+// 类型断言
+function isNumber(padding: any): padding is number {
+  return typeof padding === 'number';
+}
+function isString(padding: any): padding is string {
+  return typeof padding === 'string';
 }
