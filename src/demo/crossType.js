@@ -29,3 +29,13 @@ var LoggerClass = /** @class */ (function () {
 var combine = extend(new Person('aaa'), new LoggerClass());
 combine.name;
 combine.log();
+// 联合类型
+function paddingLeft(value, padding) {
+    if (typeof padding === 'string') {
+        return value + padding;
+    }
+    if (typeof padding === 'number') {
+        return Array(padding + 1).join(' ') + value;
+    }
+    throw new Error('input target type not number or string');
+}
