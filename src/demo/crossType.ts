@@ -1,8 +1,8 @@
 function extend<T, U>(first: T, second: U): T & U {
-  let result = {};
+  let result = {} as T & U
   for (const id in first) {
     if (!result.hasOwnProperty(id)) {
-      result[id] = first[id]
+      result[id] = first[id] as any;
     }
   }
   for (const id in second) {
@@ -10,5 +10,24 @@ function extend<T, U>(first: T, second: U): T & U {
       result[id] = second[id] as any;
     }
   }
-  return result as T & U;
+  return result;
 }
+
+class Person {
+  constructor(public name: string){
+  }
+}
+
+interface loger{
+  log(): void
+}
+
+class LoggerClass implements loger {
+  log() {
+    ///
+  }
+}
+
+let combine = extend(new Person('aaa'), new LoggerClass());
+combine.name
+combine.log()
