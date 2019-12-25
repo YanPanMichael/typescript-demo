@@ -1,5 +1,6 @@
 let a: number[] = [1, 2, 3];
 let b: ReadonlyArray<number> = a;
+
 //error
 b.push(4)
 b.length = 9
