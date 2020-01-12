@@ -66,8 +66,6 @@ let co = getCounter();
 co(11);
 co.reset();
 
-
-
 interface A {
   varA: string;
   funA(): void;
@@ -78,11 +76,12 @@ interface B {
   funB(input: string): void;
 }
 
-interface C extends A, B{ //接口可以多个继承
+interface C extends A, B {
+  //接口可以多个继承
   varC: ReadonlyStringArray;
   funC(input: string): boolean;
   funA(): Boolean;
-  [index:number]:string;
+  [index: number]: string;
 }
 
 abstract class ClassD {
@@ -92,16 +91,17 @@ abstract class ClassD {
   }
   abstract funD(): void;
   funDD() {
-    console.log('class function DD')
+    console.log("class function DD");
   }
 }
 
 class ClassB {
-  protected varclassB:string = ''
+  protected varclassB: string = "";
 }
 
-class ClassC extends ClassB{ //类只能单继承 但是可以多实现
-  varclassC:string = ''
+class ClassC extends ClassB {
+  //类只能单继承 但是可以多实现
+  varclassC: string = "";
 }
 
 class classA extends ClassD implements C, B {
@@ -109,7 +109,7 @@ class classA extends ClassD implements C, B {
     throw new Error("Method not implemented.");
   } //类 单继承 多实现
   [index: number]: string;
-  varC: ReadonlyStringArray = [];  
+  varC: ReadonlyStringArray = [];
   funA(): Boolean {
     throw new Error("Method not implemented.");
   }
@@ -118,12 +118,10 @@ class classA extends ClassD implements C, B {
   constructor(input: string) {
     super(input);
     this.varB = 1;
-    this.varA = ''
+    this.varA = ""
   }
-  funB(name:string) {
-
-  }
-  funC(name:string) {
+  funB(name: string) {}
+  funC(name: string) {
     return true;
   }
 }
