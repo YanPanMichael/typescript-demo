@@ -30,3 +30,21 @@ class AnalogClock implements ClockInterface {
 
 let dc = createClock(DigitalClock, 12, 1)
 let ac = createClock(AnalogClock, 23, 17)
+
+class Parent {
+  private name: string
+  protected constructor(name:string) {
+    this.name = name
+  }
+}
+
+class Child extends Parent {
+  age: number;
+  constructor(name:string, age:number) {
+    super(name);
+    this.age = age;
+  }
+}
+
+let p = new Parent('p'); // protected constructor
+let c = new Child('c', 16);
