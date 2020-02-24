@@ -24,3 +24,5 @@ var employee = new Employee('Max');
 if (employee.fullname) {
     console.log(employee.fullname);
 }
+// tsc GetAndSet.ts --target es5
+// npm run tsc src/demo/GetAndSet.ts
