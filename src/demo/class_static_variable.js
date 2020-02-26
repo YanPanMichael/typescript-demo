@@ -13,7 +13,10 @@ var Greeter = /** @class */ (function () {
     Greeter.standardGreeting = "hello";
     return Greeter;
 }());
-var greeter;
-greeter = new Greeter();
+var greeter = new Greeter();
 console.log(greeter.greet());
 console.log(Greeter.standardGreeting);
+var greeterMaker = Greeter;
+greeterMaker.standardGreeting = "welcome";
+var greeter2 = new Greeter();
+console.log(greeter2.greet());

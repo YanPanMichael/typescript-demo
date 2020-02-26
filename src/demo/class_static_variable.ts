@@ -16,7 +16,11 @@ class Greeter {
   }
 }
 
-let greeter: Greeter;
-greeter = new Greeter();
+let greeter: Greeter = new Greeter();
 console.log(greeter.greet());
 console.log(Greeter.standardGreeting);
+
+let greeterMaker: typeof Greeter = Greeter;
+greeterMaker.standardGreeting = "welcome";
+let greeter2 = new Greeter();
+console.log(greeter2.greet());
