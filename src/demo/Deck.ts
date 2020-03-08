@@ -6,7 +6,8 @@ interface Card {
 interface Deck {
   suits: string[],
   cards: number[],
-  createCardPicker: () => () => Card
+  createCardPicker: (this:Deck) => () => Card,
+  // createCardPicker(): (this:Deck) => {}
 }
 
 
