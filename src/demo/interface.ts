@@ -125,3 +125,13 @@ class classA extends ClassD implements C, B {
     return true;
   }
 }
+
+function identify<T>(arg: T): T {
+  return arg;
+}
+
+interface GenericIdentify {
+  <T>(arg: T): T
+}
+
+let myIdentify: GenericIdentify = identify
