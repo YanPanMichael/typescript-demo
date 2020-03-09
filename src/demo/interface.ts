@@ -130,8 +130,8 @@ function identify<T>(arg: T): T {
   return arg;
 }
 
-interface GenericIdentify {
-  <T>(arg: T): T
+interface GenericIdentify<T> {
+  (arg: T): T
 }
 
-let myIdentify: GenericIdentify = identify
+let myIdentify: GenericIdentify<number> = identify
