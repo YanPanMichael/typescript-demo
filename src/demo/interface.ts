@@ -118,7 +118,7 @@ class classA extends ClassD implements C, B {
   constructor(input: string) {
     super(input);
     this.varB = 1;
-    this.varA = ""
+    this.varA = "";
   }
   funB(name: string) {}
   funC(name: string) {
@@ -126,12 +126,21 @@ class classA extends ClassD implements C, B {
   }
 }
 
-function identify<T>(arg: T): T {
+interface lengthAble {
+  length: number;
+}
+
+function identify<T extends lengthAble>(arg: T): T {
+  console.log(arg.length);
   return arg;
 }
 
-interface GenericIdentify<T> {
-  (arg: T): T
+interface GenericIdentify<T extends lengthAble> {
+  (arg: T): T;
 }
 
-let myIdentify: GenericIdentify<number> = identify
+let myIdentify: GenericIdentify<number[]> = identify;
+
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key]
+}
